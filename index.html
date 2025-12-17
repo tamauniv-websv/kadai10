@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON API Call</title>
+</head>
+<body>
+  <script>
+    // API の呼び出し規約は https://pokeapi.co/docs/v2 から確認
+    async function getData() {
+      const apiUrl = 'https://pokeapi.co/api/v2/pokemon/pikachu';
+        const response = await fetch(apiUrl, {
+          method: 'GET',
+          headers: { 'Accept': 'application/json' }
+        });
+
+        const data = await response.json();
+        console.log(JSON.stringify(data));
+    }
+
+    fetchData();
+  </script>
+</body>
+</html>
